@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+.App{
+    background-color: #DBDFFD;
+    height: 100vh;
+    padding-bottom: 50px;
+}
+.home{
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.container .header{
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-image: linear-gradient(to right, #9BA3EB, #242F9B);
+    border-radius: 10px 10px 0px 0px;
+}
+.container .header h3{
+    color: #DBDFFD;
+    font-weight: 600;
+    font-size: large;
+}
+.empty{
+    text-align: center;
+    background-color: #fefefe;
+    padding: 10px 0px;
+}
+.form-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.add-form{
+    display: flex;
+}
+.new-todo-input{
+    padding: 5px 30px 5px 10px;
+    border-radius: 20px;
+    outline: none;
+    border: 0px;
+    width: 250px;
+}
+.add-icon{
+    position: absolute;
+    right: 0px;
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+.add-icon svg{
+    height: 2em;
+    width: 2em;
+    color: #242F9B;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-icon:hover svg{
+    color: #9BA3EB;
+}
+ul{
+    list-style: none;
+}
+.todo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fefefe;
+    transition: all 0.5s ease-in-out;
+    border-bottom: 1px solid gray;
+}
+.todo:hover{
+    background-color: #DBDFFD;
+    transform: scale(1.1);
+    box-shadow:0px 0px 0px 2px #9BA3EB inset;
+    border-bottom: 0px;
+    z-index: 1;
+}
+.todo:hover ::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 10px;
+    height: 100%;
+    background-color: #242F9B;
+}
+.todo-details{
+    width: 80%;
+}
+.todo-details h6{
+    font-size: 9px;
+}
+.todo-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.todo-actions{
+    display: flex;
+    gap: 8px;
+}
+.todo-actions button{
+    border: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+}
+.todo-actions svg{
+    height: 1.4em;
+    width: 1.4em;
+    color: #242F9B;
+}
+.todo-actions svg:hover{
+    color: #9BA3EB;
+}
+.completed .todo-name{
+    text-decoration: line-through;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.todo-footer{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #fefefe;
+    padding: 8px 5px;
+}
+.todo-footer h3{
+    color: #9BA3EB;
+    font-size: 10px;
+}
+.todo-footer .filter-options{
+    display: flex;
+    gap: 10px;
+}
+.todo-footer .filter-options button{
+    display: flex;
+    gap: 10px;
+    outline: none;
+    border: 0px;
+    background-color: transparent;
+    font-size: 10px;
+    cursor: pointer;
+}
+.todo-footer .filter-options button:hover{
+    color: #242F9B;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-footer .clear{
+    outline: none;
+    border: 0px;
+    background-color: transparent;
+    font-size: 10px;
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-footer .clear:hover{
+    color: #242F9B;
+    font-weight: 600;
+}
+
+.selected-filter{
+    color: #242F9B;
+    font-weight: 600;
+}
+
+.page-404{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
